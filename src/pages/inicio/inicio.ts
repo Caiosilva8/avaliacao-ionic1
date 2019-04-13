@@ -38,8 +38,28 @@ export class InicioPage {
         // doc = variavel que armazena um objeto de "query"
         let c = new Cliente(); //criando um objeto
         c.setDados(doc.data()); //Pega o obj firebase (any) e transformar para obj cliente
+        c.id = doc.id;
         this.listaDeClientes.push(c); // pega o objeto cliente e adiciono na listas
       });
     });
+  }
+
+  novoCliente(){
+    this.navCtrl.push('NovoClientePage')
+  }
+
+  remove(obj : Cliente){
+    var ref = firebase.firestore().collection("cliente");
+    ref.doc(obj.id).delete()
+    .then(()=>{
+      this.listaDeClientes = [];
+      this.getList();
+    }).catch(()=>{
+      console.log('Erro ao Atualizar');
+    })
+  }
+
+  atualiza(obj : Cliente){
+    this.navCtrl.push('ClienteVisualizaPage',{'cliente' : obj})
   }
 }

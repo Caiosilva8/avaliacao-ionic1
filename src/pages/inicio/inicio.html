@@ -17,14 +17,20 @@
 
 <ion-content padding>
 
+<!-- <button ion-button full >Novo Cliente</button> -->
+  <button ion-button color="dark" outline (click)="novoCliente()">Novo Cliente</button>
+
     <ion-card *ngFor="let cliente of listaDeClientes">
         <ion-card-header>
           {{cliente?.nome}}
         </ion-card-header>
 
         <ion-card-content>
-          <ion-icon class="mail"></ion-icon>{{cliente?.email}}
-          <ion-icon class="call"></ion-icon>{{cliente?.telefone}}
+          <ion-icon name="mail"></ion-icon>{{cliente?.email}}
+          <ion-icon name="call"></ion-icon>{{cliente?.telefone}}
+
+          <button ion-button color="dark" outline (click)="remove(cliente)">  <ion-icon name="trash"></ion-icon>  </button>
+          <button ion-button color="dark" outline (click)="atualiza(cliente)"><ion-icon name="git-compare"></ion-icon>  </button>
         </ion-card-content>
       </ion-card>
 
