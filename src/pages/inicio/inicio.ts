@@ -17,7 +17,7 @@ export class InicioPage {
     
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
-    public menu : MenuController) {
+     public menu : MenuController) {
 
       this.firestore.settings(this.settings); // Aplicar Conf.padrão
   }
@@ -47,6 +47,9 @@ export class InicioPage {
   novoCliente(){
     this.navCtrl.push('NovoClientePage')
   }
+
+  
+
 
   remove(obj : Cliente){
     var ref = firebase.firestore().collection("cliente");

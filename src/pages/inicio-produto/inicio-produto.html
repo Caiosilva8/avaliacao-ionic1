@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="arrow-dropright-circle"></ion-icon>
+    </button>
+  </ion-navbar>
+  <ion-title>Inicio Produto</ion-title>
+</ion-header>
+
+
+<ion-content padding>
+    <button ion-button color="dark" outline (click)="novoProduto()">Novo Produto</button>
+    
+    <ion-card *ngFor="let produto of listaDeProdutos">
+      <ion-card-header>
+        {{produto.nomeProduto}}
+      </ion-card-header>
+
+      <ion-card-content>
+          <ion-icon name="logo-usd"></ion-icon>{{produto.preco}}
+          <ion-icon name="list-box"></ion-icon>{{produto.categoria}}
+          <ion-icon ios="ios-list" md="md-list"></ion-icon>{{produto.descricao}}
+
+          <button ion-button color="dark" outline (click)="remove(produto)">  <ion-icon name="trash"></ion-icon>  </button>
+          <button ion-button color="dark" outline (click)="atualiza(cliente)"><ion-icon name="git-compare"></ion-icon>  </button>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>
