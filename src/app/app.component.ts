@@ -27,7 +27,10 @@ export class MyApp {
       { title: 'Home', component: 'HomePage' },
       { title: 'Logoff', component: 'LogoffPage'},
       {title: 'ProdutoHome', component: 'ProdutoPage'},
-      {title: 'ProdutoLista', component: 'InicioProdutoPage'}
+      {title: 'ProdutoLista', component: 'InicioProdutoPage'},
+      {title: 'LivroHome', component: 'LivroPage'},
+      {title: 'LivroLista', component: 'InicioLivroPage'}
+
 
     ];
 

@@ -1,0 +1,31 @@
+
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+          <ion-icon name="arrow-dropright-circle"></ion-icon>
+        </button>
+      </ion-navbar>
+      <ion-title>Inicio Livro</ion-title>
+</ion-header>
+
+
+<ion-content padding>
+    <button ion-button color="dark" outline (click)="novoLivro()">Novo Livro</button>
+
+    <ion-card *ngFor="let livro of listaDeLivros">
+      <ion-card-header>
+        {{livro.titulo}}
+      </ion-card-header>
+
+      <ion-card-content>
+          <ion-icon name="logo-usd"></ion-icon>{{livro.autor}}
+          <ion-icon name="list-box"></ion-icon>{{livro.preco}}
+          <ion-icon ios="ios-list" md="md-list"></ion-icon>{{livro.resumo}}
+
+          <button ion-button color="dark" outline (click)="remove(livro)">  <ion-icon name="trash"></ion-icon>  </button>
+          <button ion-button color="dark" outline (click)="atualiza(livro)"><ion-icon name="git-compare"></ion-icon>  </button>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>
